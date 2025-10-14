@@ -1,14 +1,14 @@
-import { DM_Sans, Outfit } from "next/font/google";
+import { Work_Sans, Sora } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${outfit.variable} antialiased`}
+        className={`${workSans.variable} ${sora.variable} antialiased`}
       >
         {children}
       </body>
