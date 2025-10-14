@@ -17,7 +17,7 @@ A modern, visually appealing landing page for InitFlow - an AI-powered app build
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Fonts**: Geist Sans & Geist Mono
+- **Fonts**: Inter (body) & Space Grotesk (headings)
 
 ## 📦 Components
 

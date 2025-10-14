@@ -16,8 +16,8 @@
   --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,4 +46,15 @@ html {
 .gradient-radial {
   background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent 50%),
               radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.1), transparent 50%);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p, span, div, a, button {
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
