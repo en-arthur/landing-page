@@ -1,14 +1,14 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${dmSans.variable} ${outfit.variable} antialiased`}
       >
         {children}
       </body>
