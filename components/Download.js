@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download as DownloadIcon, Apple, Monitor, CheckCircle } from 'lucide-react';
-import { useState } from 'react';
+import { Download as DownloadIcon, Apple, Monitor } from 'lucide-react';
 
 const platforms = [
   {
@@ -29,15 +28,6 @@ const platforms = [
 ];
 
 export default function Download() {
-  const [downloadMessage, setDownloadMessage] = useState('');
-
-  const handleDownload = (platformName) => {
-    setDownloadMessage(`Download started for ${platformName}! Check the info in the next page.`);
-    setTimeout(() => {
-      setDownloadMessage('');
-    }, 5000);
-  };
-
   return (
     <section id="download" className="py-24 px-6 bg-foreground/[0.02]">
       <div className="container mx-auto max-w-6xl">
@@ -56,21 +46,6 @@ export default function Download() {
             Available for all major desktop platforms. Choose your OS and start building.
           </p>
         </motion.div>
-
-        {/* Download Message */}
-        {downloadMessage && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="mb-8 mx-auto max-w-2xl"
-          >
-            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4 flex items-center gap-3">
-              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0" />
-              <p className="text-green-800 dark:text-green-200 font-medium">{downloadMessage}</p>
-            </div>
-          </motion.div>
-        )}
 
         {/* Download Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -97,10 +72,7 @@ export default function Download() {
               <p className="text-sm text-foreground/40 mb-6">{platform.size}</p>
 
               {/* Download Button */}
-              <button 
-                onClick={() => handleDownload(platform.name)}
-                className="w-full py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105"
-              >
+              <button className="w-full py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
                 <DownloadIcon className="w-5 h-5" />
                 Download
               </button>

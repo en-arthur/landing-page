@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -18,7 +18,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-lg bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors group">
-                <MessageCircle className="w-5 h-5 text-foreground/60 group-hover:text-primary transition-colors" />
+                <Twitter className="w-5 h-5 text-foreground/60 group-hover:text-primary transition-colors" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-lg bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors group">
+                <Github className="w-5 h-5 text-foreground/60 group-hover:text-primary transition-colors" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-lg bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors group">
+                <Linkedin className="w-5 h-5 text-foreground/60 group-hover:text-primary transition-colors" />
               </a>
             </div>
           </div>

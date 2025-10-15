@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import AppDemo from '@/components/AppDemo';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import Download from '@/components/Download';
@@ -12,7 +11,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <AppDemo />
         <Features />
         <HowItWorks />
         <Download />

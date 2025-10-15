@@ -75,11 +75,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <a href="#download" className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 flex items-center gap-2">
+            <button className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 flex items-center gap-2">
               <Download className="w-5 h-5" />
               Download for Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
+            <button className="px-8 py-4 bg-white dark:bg-foreground/5 text-foreground border-2 border-foreground/10 rounded-xl font-semibold text-lg hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
+              Watch Demo
+            </button>
           </motion.div>
 
           {/* Platform Badges */}
