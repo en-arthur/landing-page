@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download as DownloadIcon, Apple, Monitor } from 'lucide-react';
+import { Download as DownloadIcon, Apple, Monitor, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
 
 const platforms = [
   {
@@ -28,6 +29,19 @@ const platforms = [
 ];
 
 export default function Download() {
+  const [downloadStarted, setDownloadStarted] = useState(false);
+  const [downloadedPlatform, setDownloadedPlatform] = useState('');
+
+  const handleDownload = (platformName) => {
+    setDownloadedPlatform(platformName);
+    setDownloadStarted(true);
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      setDownloadStarted(false);
+    }, 5000);
+  };
+
   return (
     <section id="download" className="py-24 px-6 bg-foreground/[0.02]">
       <div className="container mx-auto max-w-6xl">
@@ -46,6 +60,26 @@ export default function Download() {
             Available for all major desktop platforms. Choose your OS and start building.
           </p>
         </motion.div>
+
+        {/* Download Started Message */}
+        {downloadStarted && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="mb-8 mx-auto max-w-md"
+          >
+            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4 flex items-center gap-3">
+              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0" />
+              <div>
+                <p className="font-semibold text-green-800 dark:text-green-300">Download Started!</p>
+                <p className="text-sm text-green-700 dark:text-green-400">
+                  Your {downloadedPlatform} download will begin shortly. Check your downloads folder for more info.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Download Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -72,7 +106,10 @@ export default function Download() {
               <p className="text-sm text-foreground/40 mb-6">{platform.size}</p>
 
               {/* Download Button */}
-              <button className="w-full py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
+              <button 
+                onClick={() => handleDownload(platform.name)}
+                className="w-full py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105"
+              >
                 <DownloadIcon className="w-5 h-5" />
                 Download
               </button>

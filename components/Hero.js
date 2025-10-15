@@ -80,9 +80,6 @@ export default function Hero() {
               Download for Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-white dark:bg-foreground/5 text-foreground border-2 border-foreground/10 rounded-xl font-semibold text-lg hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
-              Watch Demo
-            </button>
           </motion.div>
 
           {/* Platform Badges */}
